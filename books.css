@@ -40,11 +40,11 @@ section h1 {
 }
 
 
-.toReadContent, .readContent {
+.wishlistContent, .readContent {
     display: none;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
     padding: 1%;
-    width: 90%;
+    width: 100%;
     margin: auto;
     border-radius: 5px;
   }
@@ -179,4 +179,8 @@ h4 {
     border-radius: 4px;
     padding: 2%;
     margin: 2%;
+}
+
+hr {
+    border-top: 5px solid green; opacity: 1; width: 100%; max-width: 550px; margin: auto;
 }
