@@ -3,7 +3,7 @@ function getBooks() {
   document.querySelector("input").innerHTML = " ";
   document.querySelector("#results").innerHTML = " ";
   document.querySelector(".total-number").innerHTML =
-    "May take a minute to display results.";
+    "May take a minute to display results...";
 
   fetch(
     "https://openlibrary.org/search.json?q=" +
