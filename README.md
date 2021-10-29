@@ -19,3 +19,6 @@
 ## Rate Books
 - Begins at line 140: [rating books](https://github.com/maggiemcc/book-app/blob/master/books.js)
 - Uses querySelectorAll and array.forEach to give a book a rating out of 5 stars. When a star is clicked it is assigned a class of "active" and the other four stars will be given either a class of "active" or "disabled" depending on which star is clicked.
+
+## Netlify
+- [Netlify Link](https://book-app-3760.netlify.app/)
