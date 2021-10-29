@@ -17,29 +17,36 @@
 <body>
     <div>
         <h1 style="text-align: center; color: white; font-weight: bolder;">Book App</h1>
-
     </div>
 
+<div class="appContent">
+<div class="searchContent">
+    <h3 style="color: white; text-align: center; border-bottom: 3px solid white; margin-top: 20px; padding-bottom: 2%;">Search</h3>
 
     <section class="search-section">
         <input type="text" name="searchBar" placeholder="Search for a book or author"><button
             onClick="getBooks()">Search</button>
     </section>
-    <div class="results" style="background-color: white; padding: 2%; width: 100%; margin: auto; max-width: 600px;">
+    <div class="results">
         <div class="results-dropdown" onClick="toggleSearch()">
-            <h2 style="font-weight: normal; display: inline;">Search Results</h2>
-            <i class="fas fa-caret-down" style="display: inline"></i>
-            <h6 class="total-number"></h6>
-            <hr style="border-top: 5px solid green; opacity: 1; width: 100%; max-width: 550px; margin: auto;">
-
+            <div style="font-weight: 500; text-align: left; font-size: 30px;">
+            <h3 style="display: inline;">Search Results</h3>
+            <i class="fas fa-caret-down" style="display: inline; float: right; padding: 0; margin: auto 1%; font-size: 35px;"></i>
         </div>
+            <h6 class="total-number" style="color: green;"></h6>
+            <hr style="border-top: 5px solid green; opacity: 1; width: 100%; margin: auto;">
+        </div>
+
         <div id="results">
 
         </div>
+    </div>
 
+    
     </div>
 
     <div class="category">
+        <h3 style="color: white; text-align: center; border-bottom: 3px solid white; margin-top: 20px; padding-bottom: 2%;">Categories</h3>
         <section class="toread-section">
             <div class="section-dropdown" onClick="toggleWishlist()">
                 <h1>Want to Read</h1>
@@ -57,7 +64,7 @@
 
         <section class="booksread-section">
             <div class="section-dropdown" onClick="toggleRead()">
-                <h1>Books I Have Read</h1>
+                <h1>Books I've Read</h1>
                 <i class="fas fa-caret-down"></i>
             </div>
 
@@ -69,6 +76,7 @@
             </div>
         </section>
     </div>
+</div>
 
     <script src="books.js"></script>
 </body>

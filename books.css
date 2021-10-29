@@ -1,192 +1,228 @@
 body {
-    padding: 2%;
-    background-color: darkgreen;
-    color: black;
+  padding: 2%;
+  background-color: darkgreen;
+  color: black;
 }
+
+.appContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 5% 5% 5%;
+  background-color: green;
+  border-radius: 20px;
+  margin-top: 30px;
+  border: 1px solid black;
+}
+
 section {
-    margin: 2% auto;
-    width: 95%;
-    max-width: 1100px;
-    padding: 2%;
-    border-radius: 10px;
-    box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
-    background-color: white;
+  margin: 2% auto;
+  width: 95%;
+  padding: 2%;
+  border-radius: 10px;
+  box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
+  background-color: white;
 }
+
 section h1 {
-    font-size: 30px;
+  font-size: 30px;
 }
 
-.section-dropdown {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 300px;
-    line-height: 15px;
-    text-align: center;
-    font-size: 15px;
-    cursor: pointer;
+.searchContent {
+  width: 95%;
+  margin: 0 auto;
 }
-
-.fa-caret-down {
-    font-size: 25px;
-    margin: auto 5%;
-}
-
-
-.wishlistContent, .readContent {
-    display: none;
-    /* border: 1px solid gray; */
-    padding: 1%;
-    width: 100%;
-    margin: auto;
-    border-radius: 5px;
-  }
-
-  .results {
-    padding: 1%;
-    width: 100%;
-    max-width: 1100px;
-    margin: auto;
-    border-radius: 5px;
-    text-align: center;
-    box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
-  }
-
-  #results {
-    width: 90%;
-    margin: auto auto;
-    min-height: 50px;
-    border-radius: 5px;
-    display: block;
-    justify-content: center;
-  }
-
-
-.card {
-    margin: 1%;
-    width: 100%;
-    max-width: 500px;
-    border-radius: 2px;
-    text-align: left;
-    border: 1px solid lightgray;
-    box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.1);
-    justify-content: center;
-    margin: 2% auto;
-
-}
-
-
-.cardKeyDiv p, .cardVersionDiv p {
-    display: inline;
-}
-
-/* h4 {
-    color: darkblue;
-} */
 
 .search-section {
-
-    width: 100%;
-    max-width: 600px;
-    text-align: center;
+  width: 100%;
+  text-align: center;
 }
+
 .search-section input {
-    padding: 1%;
-    width: 90%;
-    max-width: 350px;
-}
-
-.card-title {
-    color: green;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 18px;
-    margin-top: 15px;
+  padding: 1%;
+  width: 85%;
+  max-width: 300px;
+  border-radius: 5px;
+  outline: none;
 }
 
 .search-section button {
-    background-color: green;
-    color: white;
-    padding: 2%;
-    line-height: 20px;
-    margin-left: 2%;
-    border-radius: 5px;
-    border: none;
+  background-color: green;
+  color: white;
+  padding: 2%;
+  line-height: 20px;
+  margin-left: 2%;
+  border-radius: 5px;
+  border: none;
+}
+
+.results {
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  padding: 2%;
+}
+
+#results {
+  width: 90%;
+  margin: auto auto;
+  min-height: 100px;
+  border-radius: 5px;
+  display: block;
+  justify-content: center;
+}
+
+.section-dropdown {
+  width: 100%;
+  line-height: 15px;
+  text-align: left;
+  font-size: 15px;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 90% 10%;
+}
+
+.fa-caret-down {
+  font-size: 35px;
+  margin: auto 5%;
+}
+
+.wishlistContent,
+.readContent {
+  display: none;
+  padding: 1%;
+  width: 100%;
+  margin: auto;
+  border-radius: 5px;
+}
+
+.card {
+  margin: 1%;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 5px;
+  text-align: left;
+  border: 1px solid lightgray;
+  box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  margin: 2% auto;
+}
+
+.cardKeyDiv p,
+.cardVersionDiv p {
+  display: inline;
+}
+
+.card-title {
+  color: green;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 15px;
 }
 
 .category {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0;
-    width: 95%;
-    max-width: 1100px;
-    margin: auto;
+  padding: 0;
+  width: 95%;
+  margin: 0 auto;
 }
 
-.toread-section, .booksread-section {
-    width: 100%;
-    min-width: 250px;
-    max-width: 500px;
-    margin: 2% auto;
+.toread-section,
+.booksread-section {
+  width: 100%;
+  margin: 2% auto;
+  padding: 2% 2%;
+  /* min-height: 80px; */
+  /* border: 1px solid red; */
+}
+
+.booksread-section {
+    margin-top: 5%;
 }
 
 .results-dropdown {
-    cursor: pointer;
-
+  cursor: pointer;
 }
 
 .results-dropdown .fa-caret-down {
-    margin: 0;
-    margin: 0 1%;
+  margin: 0;
+  margin: 0 1%;
+  display: inline;
 }
 
 .total-number {
-    font-weight: bold;
+  font-weight: bold;
 }
 
-.want-to-read, .have-read {
-    color: white;
-    background-color: darkgreen;
-    border: none;
-    border-radius: 4px;
-    padding: 2%;
-    margin: 2%;
+.want-to-read,
+.have-read {
+  color: white;
+  background-color: darkgreen;
+  border: none;
+  border-radius: 4px;
+  padding: 2%;
+  margin: 2%;
 }
 
 hr {
-    border-top: 5px solid green; opacity: 1; width: 100%; max-width: 550px; margin: auto;
+  border-top: 5px solid green;
+  opacity: 1;
+  width: 100%;
+  margin: auto;
 }
 
 .remove-btn {
-    text-align: right;
-    background-color: darkred;
-    border: none;
-    border-radius: 4px;
-    padding: 2%;
-    color: white;
-    width: 30%;
-    min-width: 50px;
-    text-align: center;
-    margin: 10px 2%;
+  text-align: right;
+  background-color: darkred;
+  border: none;
+  border-radius: 4px;
+  padding: 2%;
+  color: white;
+  width: 30%;
+  min-width: 50px;
+  text-align: center;
+  margin: 10px 2%;
 }
-
-
 
 .stars a {
-    color: gray;
-    cursor: pointer;
-    padding: 5px;
-    text-decoration: none;
+  color: gray;
+  cursor: pointer;
+  padding: 5px;
+  text-decoration: none;
 }
 
-.stars:hover a, .stars a:hover, .stars a.active {
-    color: green;
+.stars:hover a,
+.stars a:hover,
+.stars a.active {
+  color: green;
 }
 
 .stars a:hover ~ a {
-    color: rgb(146, 197, 146);
+  color: rgb(146, 197, 146);
 }
 
 .stars a.disabled {
-    color: black;
+  color: black;
+}
+
+@media only screen and (max-width: 900px) {
+  .appContent {
+    display: block;
+    margin: auto;
+    padding: 5px 1% 40px 1%;
+    background-color: green;
+    border-radius: 20px;
+    margin-top: 30px;
+  }
+
+  .toread-section,
+  .booksread-section {
+    width: 100%;
+    margin-top: 20px;
+  }
 }
