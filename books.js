@@ -16,7 +16,7 @@ function getBooks() {
           author.title,
           author.author_name,
           author.first_publish_year,
-          author.key,
+          author.key
         )
       );
       document.querySelector(
@@ -24,7 +24,6 @@ function getBooks() {
       ).innerHTML = `Books found: ${data.docs.length}`;
       // console.log(data.docs)
       return data.docs[0];
-
     })
     .catch((error) => {
       console.error(error);
@@ -138,11 +137,12 @@ function addToList(bookTitle, authorName, bookYear, bookKey) {
     }
   });
 
-
-// Creating book rating system
+  // Creating book rating system
   let form = `
     <div class="${bookKey} stars">
       <div class="star-widget">
+        <a class="fas fa-star"></a>
+        <a class="fas fa-star"></a>
         <a class="fas fa-star"></a>
         <a class="fas fa-star"></a>
         <a class="fas fa-star"></a>
@@ -152,26 +152,24 @@ function addToList(bookTitle, authorName, bookYear, bookKey) {
 
   cardBody.insertAdjacentHTML("afterbegin", form);
 
-  const ratingStars = document.getElementsByClassName(`${bookKey}`)[0].querySelectorAll('a');
+  const ratingStars = document
+    .getElementsByClassName(`${bookKey}`)[0]
+    .querySelectorAll("a");
   ratingStars.forEach((star, index) => {
-    star.addEventListener('click', () => {
-
+    star.addEventListener("click", () => {
       ratingStars.forEach((activeStar, otherIndex) => {
-        if(otherIndex <= index){
+        if (otherIndex <= index) {
           activeStar.classList.add("active");
           activeStar.classList.remove("disabled");
           console.log("active star(s)--->", activeStar);
-        }
-        else{
+        } else {
           activeStar.classList.add("disabled");
           activeStar.classList.remove("active");
-          console.log("disabled star(s)---->", activeStar)
+          console.log("disabled star(s)---->", activeStar);
         }
-
-      })
+      });
     });
   });
-
 }
 
 // Toggle Sections
