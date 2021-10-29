@@ -169,3 +169,24 @@ hr {
     text-align: center;
     margin: 10px 2%;
 }
+
+
+
+.stars a {
+    color: gray;
+    cursor: pointer;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.stars:hover a, .stars a:hover, .stars a.active {
+    color: green;
+}
+
+.stars a:hover ~ a {
+    color: rgb(146, 197, 146);
+}
+
+.stars a.disabled {
+    color: black;
+}

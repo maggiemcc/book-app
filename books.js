@@ -16,14 +16,15 @@ function getBooks() {
           author.title,
           author.author_name,
           author.first_publish_year,
-          author.key
+          author.key,
         )
       );
-      // data.docs.forEach((book) => addWishlist(book.key));
       document.querySelector(
         ".total-number"
       ).innerHTML = `Books found: ${data.docs.length}`;
+      // console.log(data.docs)
       return data.docs[0];
+
     })
     .catch((error) => {
       console.error(error);
@@ -36,7 +37,6 @@ function getBooks() {
 // displaying content in results div.
 function addToList(bookTitle, authorName, bookYear, bookKey) {
   let content = document.querySelector("#results");
-
   let card = document.createElement("div");
   card.className = "card";
   card.setAttribute("id", `${bookKey}`);
@@ -49,9 +49,6 @@ function addToList(bookTitle, authorName, bookYear, bookKey) {
   let removeBtn = document.createElement("button");
   removeBtn.className = "remove-btn";
   removeBtn.innerHTML = "Remove";
-
-  let ratingDiv = document.createElement("div");
-  ratingDiv.className = "rating__star far fa-star";
 
   let cardTitle = document.createElement("h5");
   cardTitle.className = "card-title";
@@ -71,19 +68,12 @@ function addToList(bookTitle, authorName, bookYear, bookKey) {
   let haveBtn = document.createElement("button");
   haveBtn.className = "have-read";
   haveBtn.innerHTML = "Have Read";
-  // haveBtn.setAttribute("onClick", "haveBtn()")
 
   let wantBtn = document.createElement("button");
   wantBtn.className = "want-to-read";
   wantBtn.innerHTML = "Want to Read";
 
-  //   let ratingDiv = document.createElement("div");
-  //   let span = document.createElement("span");
-  //   ratingDiv.className = "container";
-  //   span.setAttribute("id", "rateMe1");
-
   // Appending
-  cardBody.appendChild(ratingDiv);
   cardBody.appendChild(cardTitle);
   cardBody.appendChild(cardAuthor);
   cardBody.appendChild(yearDiv);
@@ -94,9 +84,7 @@ function addToList(bookTitle, authorName, bookYear, bookKey) {
   card.appendChild(cardBody);
   content.appendChild(card);
 
-
   let chosenId = card.id;
-
 
   // Appending books to categories
   // Append book to have read category.
@@ -149,9 +137,44 @@ function addToList(bookTitle, authorName, bookYear, bookKey) {
       removeBtn.parentElement.remove();
     }
   });
+
+
+// Creating book rating system
+  let form = `
+    <div class="${bookKey} stars">
+      <div class="star-widget">
+        <a class="fas fa-star"></a>
+        <a class="fas fa-star"></a>
+        <a class="fas fa-star"></a>
+      </div>
+    </div>
+  `;
+
+  cardBody.insertAdjacentHTML("afterbegin", form);
+
+  const ratingStars = document.getElementsByClassName(`${bookKey}`)[0].querySelectorAll('a');
+  ratingStars.forEach((star, index) => {
+    star.addEventListener('click', () => {
+
+      ratingStars.forEach((activeStar, otherIndex) => {
+        if(otherIndex <= index){
+          activeStar.classList.add("active");
+          activeStar.classList.remove("disabled");
+          console.log("active star(s)--->", activeStar);
+        }
+        else{
+          activeStar.classList.add("disabled");
+          activeStar.classList.remove("active");
+          console.log("disabled star(s)---->", activeStar)
+        }
+
+      })
+    });
+  });
+
 }
 
-// Toggling Sections
+// Toggle Sections
 function toggleWishlist() {
   let content = document.querySelector(".wishlistContent");
   if (content.style.display === "none") {
