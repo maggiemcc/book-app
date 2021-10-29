@@ -1,4 +1,4 @@
-// search, fetching
+// search, fetching data using search bar input value
 function getBooks() {
   document.querySelector("input").innerHTML = " ";
   document.querySelector("#results").innerHTML = " ";
@@ -33,7 +33,7 @@ function getBooks() {
     });
 }
 
-// displaying content
+// displaying content in results div.
 function addToList(bookTitle, authorName, bookYear, bookKey) {
   let content = document.querySelector("#results");
 
@@ -71,6 +71,7 @@ function addToList(bookTitle, authorName, bookYear, bookKey) {
   let haveBtn = document.createElement("button");
   haveBtn.className = "have-read";
   haveBtn.innerHTML = "Have Read";
+  // haveBtn.setAttribute("onClick", "haveBtn()")
 
   let wantBtn = document.createElement("button");
   wantBtn.className = "want-to-read";
@@ -94,11 +95,12 @@ function addToList(bookTitle, authorName, bookYear, bookKey) {
   content.appendChild(card);
 
 
-  // Appending books to categories
-  haveBtn.addEventListener("click", () => {
-    let chosenId = card.id;
-    console.log(chosenId);
+  let chosenId = card.id;
 
+
+  // Appending books to categories
+  // Append book to have read category.
+  haveBtn.addEventListener("click", () => {
     let haveRead = document.querySelector(".readContent div");
 
     if (!haveRead.querySelector(`[id="${chosenId}"]`)) {
@@ -113,9 +115,8 @@ function addToList(bookTitle, authorName, bookYear, bookKey) {
     }
   });
 
-
+  // Append book to want to read/wishlist.
   wantBtn.addEventListener("click", () => {
-    let chosenId = card.id;
     let wishlist = document.querySelector(".wishlistContent div");
 
     if (!wishlist.querySelector(`[id="${chosenId}"]`)) {
@@ -130,10 +131,9 @@ function addToList(bookTitle, authorName, bookYear, bookKey) {
     }
   });
 
+  // Removing book, append back to search results.
   removeBtn.addEventListener("click", () => {
     let removing = document.querySelector("#results");
-    let chosenId = card.id;
-
     if (!removing.querySelector(`[id="${chosenId}"]`)) {
       removing.insertBefore(
         removeBtn.parentElement.parentElement.parentElement,
