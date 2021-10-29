@@ -43,6 +43,12 @@ function addToList(bookTitle, authorName, bookYear, bookKey) {
   let cardBody = document.createElement("div");
   cardBody.className = "card-body";
 
+  let removeDiv = document.createElement("div");
+  removeDiv.className = "remove-div";
+  let removeBtn = document.createElement("button");
+  removeBtn.className = "remove-btn";
+  removeBtn.innerHTML = "remove";
+
   let ratingDiv = document.createElement("div");
   ratingDiv.className = "rating__star far fa-star";
 
@@ -65,19 +71,10 @@ function addToList(bookTitle, authorName, bookYear, bookKey) {
   haveBtn.className = "have-read";
   haveBtn.innerHTML = "Have Read";
   
-  haveBtn.addEventListener('click', () => {
-    let haveRead = document.querySelector(".readContent div")
-    haveRead.appendChild(haveBtn.parentElement.parentElement);
-  })
-
+  
   let wantBtn = document.createElement("button");
   wantBtn.className = "want-to-read";
   wantBtn.innerHTML = "Want to Read";
-
-  wantBtn.addEventListener('click', () => {
-    let wishlist = document.querySelector(".wishlistContent div");
-    wishlist.appendChild(wantBtn.parentElement.parentElement);
-  })
 
 
   //   let ratingDiv = document.createElement("div");
@@ -96,6 +93,29 @@ function addToList(bookTitle, authorName, bookYear, bookKey) {
   cardBody.appendChild(haveBtn);
   card.appendChild(cardBody);
   content.appendChild(card);
+
+
+  haveBtn.addEventListener('click', () => {
+    removeDiv.appendChild(removeBtn);
+    cardBody.appendChild(removeDiv);
+
+    let haveRead = document.querySelector(".readContent div");
+    haveRead.appendChild(haveBtn.parentElement.parentElement);
+  });
+
+  wantBtn.addEventListener('click', () => {
+    removeDiv.appendChild(removeBtn);
+    cardBody.appendChild(removeDiv);
+
+    let wishlist = document.querySelector(".wishlistContent div");
+    wishlist.appendChild(wantBtn.parentElement.parentElement);
+  });
+
+  removeBtn.addEventListener('click', () => {
+    let removing = document.querySelector("#results");
+    removing.insertBefore(removeBtn.parentElement.parentElement.parentElement, removing.firstChild);
+    removeBtn.parentElement.remove();
+  });
 }
 
 

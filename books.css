@@ -184,3 +184,14 @@ h4 {
 hr {
     border-top: 5px solid green; opacity: 1; width: 100%; max-width: 550px; margin: auto;
 }
+
+.remove-btn {
+    display: block;
+    text-align: right;
+    justify-content: right;
+    /* float: right; */
+}
+.remove-div {
+
+    border: 1px solid red;
+}
