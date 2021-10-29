@@ -10,10 +10,10 @@
 
 
 ## Add Books to Books to Read
-- Begins at line 105: [adding books to want to read](https://github.com/maggiemcc/book-app/blob/master/books.js)
+- Begins at line 106: [adding books to want to read](https://github.com/maggiemcc/book-app/blob/master/books.js)
 - "Want to Read" button uses clickEvent to append the book from the search results to the "Books to Read" category list.
 
-- Begins at line 121: [removing books](https://github.com/maggiemcc/book-app/blob/master/books.js)
+- Begins at line 123: [removing books](https://github.com/maggiemcc/book-app/blob/master/books.js)
 - a "Remove" button is also appended to the book once it move to a category list. It has a clickEvent to remove it from the list and append it back to the search result list.
 
 ## Rate Books
