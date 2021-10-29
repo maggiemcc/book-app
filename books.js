@@ -1,4 +1,4 @@
-// SEARCH
+// search, fetching
 function getBooks() {
   document.querySelector("input").innerHTML = " ";
   document.querySelector("#results").innerHTML = " ";
@@ -33,6 +33,7 @@ function getBooks() {
     });
 }
 
+// displaying content
 function addToList(bookTitle, authorName, bookYear, bookKey) {
   let content = document.querySelector("#results");
 
@@ -47,7 +48,7 @@ function addToList(bookTitle, authorName, bookYear, bookKey) {
   removeDiv.className = "remove-div";
   let removeBtn = document.createElement("button");
   removeBtn.className = "remove-btn";
-  removeBtn.innerHTML = "remove";
+  removeBtn.innerHTML = "Remove";
 
   let ratingDiv = document.createElement("div");
   ratingDiv.className = "rating__star far fa-star";
@@ -70,12 +71,10 @@ function addToList(bookTitle, authorName, bookYear, bookKey) {
   let haveBtn = document.createElement("button");
   haveBtn.className = "have-read";
   haveBtn.innerHTML = "Have Read";
-  
-  
+
   let wantBtn = document.createElement("button");
   wantBtn.className = "want-to-read";
   wantBtn.innerHTML = "Want to Read";
-
 
   //   let ratingDiv = document.createElement("div");
   //   let span = document.createElement("span");
@@ -95,29 +94,62 @@ function addToList(bookTitle, authorName, bookYear, bookKey) {
   content.appendChild(card);
 
 
-  haveBtn.addEventListener('click', () => {
-    removeDiv.appendChild(removeBtn);
-    cardBody.appendChild(removeDiv);
+  // Appending books to categories
+  haveBtn.addEventListener("click", () => {
+    let chosenId = card.id;
+    console.log(chosenId);
 
     let haveRead = document.querySelector(".readContent div");
-    haveRead.appendChild(haveBtn.parentElement.parentElement);
+
+    if (!haveRead.querySelector(`[id="${chosenId}"]`)) {
+      removeDiv.appendChild(removeBtn);
+      cardBody.appendChild(removeDiv);
+      haveRead.appendChild(haveBtn.parentElement.parentElement);
+    } else {
+      haveRead.querySelector(`[id="${chosenId}"]`).remove();
+      removeDiv.appendChild(removeBtn);
+      cardBody.appendChild(removeDiv);
+      haveRead.appendChild(haveBtn.parentElement.parentElement);
+    }
   });
 
-  wantBtn.addEventListener('click', () => {
-    removeDiv.appendChild(removeBtn);
-    cardBody.appendChild(removeDiv);
 
+  wantBtn.addEventListener("click", () => {
+    let chosenId = card.id;
     let wishlist = document.querySelector(".wishlistContent div");
-    wishlist.appendChild(wantBtn.parentElement.parentElement);
+
+    if (!wishlist.querySelector(`[id="${chosenId}"]`)) {
+      removeDiv.appendChild(removeBtn);
+      cardBody.appendChild(removeDiv);
+      wishlist.appendChild(haveBtn.parentElement.parentElement);
+    } else {
+      wishlist.querySelector(`[id="${chosenId}"]`).remove();
+      removeDiv.appendChild(removeBtn);
+      cardBody.appendChild(removeDiv);
+      wishlist.appendChild(haveBtn.parentElement.parentElement);
+    }
   });
 
-  removeBtn.addEventListener('click', () => {
+  removeBtn.addEventListener("click", () => {
     let removing = document.querySelector("#results");
-    removing.insertBefore(removeBtn.parentElement.parentElement.parentElement, removing.firstChild);
-    removeBtn.parentElement.remove();
+    let chosenId = card.id;
+
+    if (!removing.querySelector(`[id="${chosenId}"]`)) {
+      removing.insertBefore(
+        removeBtn.parentElement.parentElement.parentElement,
+        removing.firstChild
+      );
+      removeBtn.parentElement.remove();
+    } else {
+      removing.querySelector(`[id="${chosenId}"]`).remove();
+      removing.insertBefore(
+        removeBtn.parentElement.parentElement.parentElement,
+        removing.firstChild
+      );
+      removeBtn.parentElement.remove();
+    }
   });
 }
-
 
 // Toggling Sections
 function toggleWishlist() {

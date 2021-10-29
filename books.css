@@ -1,16 +1,9 @@
 body {
-    /* display: grid;
-    grid-template-columns: 1fr 1fr; */
     padding: 2%;
     background-color: darkgreen;
     color: black;
 }
 section {
-    /* border: 1px solid white; */
-    /* justify-content: center; */
-    /* text-align: center; */
-    /* display: grid;
-    grid-template-columns: 1fr 1fr; */
     margin: 2% auto;
     width: 95%;
     max-width: 1100px;
@@ -50,7 +43,6 @@ section h1 {
   }
 
   .results {
-    /* border: 1px solid gray; */
     padding: 1%;
     width: 100%;
     max-width: 1100px;
@@ -60,29 +52,11 @@ section h1 {
     box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
   }
 
-/* .allBooksContent, .results { */
-    /* display: block; */
-    /* visibility: hidden; */
-    /* border: 1px solid gray; */
-    /* width: 90%; */
-    /* margin: auto; */
-    /* border-radius: 5px; */
-    /* display: grid;
-    grid-template-columns: 1fr 1fr;
-    contain: content; */
-  /* } */
-
   #results {
-    /* border: 1px solid gray; */
     width: 90%;
     margin: auto auto;
     min-height: 50px;
     border-radius: 5px;
-    /* display: grid;
-    grid-template-columns: 1fr 1fr;
-    contain: content; */
-    /* display: flex;
-    flex-wrap: wrap; */
     display: block;
     justify-content: center;
   }
@@ -104,15 +78,14 @@ section h1 {
 
 .cardKeyDiv p, .cardVersionDiv p {
     display: inline;
-    /* padding-right: 1%; */
 }
 
-h4 {
+/* h4 {
     color: darkblue;
-}
+} */
 
 .search-section {
-    /* text-align: center; */
+
     width: 100%;
     max-width: 600px;
     text-align: center;
@@ -144,7 +117,6 @@ h4 {
 .category {
     display: flex;
     flex-wrap: wrap;
-    /* border: 1px solid red; */
     padding: 0;
     width: 95%;
     max-width: 1100px;
@@ -186,12 +158,14 @@ hr {
 }
 
 .remove-btn {
-    display: block;
     text-align: right;
-    justify-content: right;
-    /* float: right; */
-}
-.remove-div {
-
-    border: 1px solid red;
+    background-color: darkred;
+    border: none;
+    border-radius: 4px;
+    padding: 2%;
+    color: white;
+    width: 30%;
+    min-width: 50px;
+    text-align: center;
+    margin: 10px 2%;
 }
