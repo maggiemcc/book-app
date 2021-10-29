@@ -95,11 +95,11 @@ function addToList(bookTitle, authorName, bookYear, bookKey) {
       cardBody.appendChild(removeDiv);
       haveRead.appendChild(haveBtn.parentElement.parentElement);
     } else {
-      // haveRead.querySelector(`[id="${chosenId}"]`).remove();
-      // removeDiv.appendChild(removeBtn);
-      // cardBody.appendChild(removeDiv);
-      // haveRead.appendChild(haveBtn.parentElement.parentElement);
-      console.log(`book id: ${chosenId} already added to Books I've Read List.`)
+      haveRead.querySelector(`[id="${chosenId}"]`).remove();
+      removeDiv.appendChild(removeBtn);
+      cardBody.appendChild(removeDiv);
+      haveRead.appendChild(haveBtn.parentElement.parentElement);
+      // console.log(`book id: ${chosenId} already added to Books I've Read List.`)
     }
   });
 
@@ -112,11 +112,11 @@ function addToList(bookTitle, authorName, bookYear, bookKey) {
       cardBody.appendChild(removeDiv);
       wishlist.appendChild(haveBtn.parentElement.parentElement);
     } else {
-      // wishlist.querySelector(`[id="${chosenId}"]`).remove();
-      // removeDiv.appendChild(removeBtn);
-      // cardBody.appendChild(removeDiv);
-      // wishlist.appendChild(haveBtn.parentElement.parentElement);
-      console.log(`book id: ${chosenId} already added to Books to Read List.`)
+      wishlist.querySelector(`[id="${chosenId}"]`).remove();
+      removeDiv.appendChild(removeBtn);
+      cardBody.appendChild(removeDiv);
+      wishlist.appendChild(haveBtn.parentElement.parentElement);
+      // console.log(`book id: ${chosenId} already added to Books to Read List.`)
     }
   });
 
